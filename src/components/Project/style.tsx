@@ -41,12 +41,13 @@ export const ProjectLink = styled("a", {
 
 export const ProjectTitle = styled(Text, {});
 
-export const Project = styled("article", {
+export const Project = styled(Flex, {
   marginTop: "4rem",
   [`&:first-child`]: {
     [`& ${ProjectTitle}:first-child`]: {
       position: "relative",
       width: "max-content",
+     
 
       "@mobile": {
         width: "auto",

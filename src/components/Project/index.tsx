@@ -11,6 +11,8 @@ import { Text } from "@/styles/Text";
 import { useEffect, useState } from "react";
 import { FaGithub, FaShare } from "react-icons/fa";
 import { userData } from "@/utils/userData";
+import { Container } from "@/styles/Global";
+import { ProjectAreaWrapperColumns, ProjectsAreaSocialMediaMessage } from "@/pages/home/style";
 
 interface ReposType {
   id: number;
@@ -42,55 +44,78 @@ export const Project = (): JSX.Element => {
 
   return (
     <>
-      {repositories &&
-        repositories?.map?.((repository) => (
-          <ProjectWrapper key={repository.id}>
-            <ProjectTitle
-              as="h2"
-              type="heading3"
-              css={{ marginBottom: "$3" }}
-              color="grey4"
-            >
-              {repository.name}
-            </ProjectTitle>
+      
+        <Container>
+          <ProjectAreaWrapperColumns>
+            <ProjectsAreaSocialMediaMessage>
+              <ProjectTitle
+                as="h2"
+                type="heading3"
+                css={{ marginBottom: "$3" }}
+                color="grey4"
+              >
+                Kenzinho vagas
+              </ProjectTitle>
 
-            <ProjectStack>
-              <Text type="body2" color="grey2">
-                Primary Language:
+              <Text type="body1" color="grey2">
+                Nosso projeto de conclusão do terceiro módulo na Kenzie foi a
+                criação de um site completo de vagas, trabalhamos em equipe e
+                utilizamos Scrum e ferramentas como Trello e Notion para nos
+                auxiliar. Tecnologias: JSON-Server, Styled-Components,
+                Bootstrap, TypeScript, Figma, Axios, React, React Hook Form,
+                React Router Dom, Toastify, Yup, Vercel
               </Text>
-              {repository.language ? (
-                <ProjectStackTech>
-                  <Text color="grey2" type="body2">
-                    {repository.language}
-                  </Text>
-                </ProjectStackTech>
-              ) : (
-                <ProjectStackTech>
-                  <Text color="grey2" type="body2">
-                    Primary language not identified
-                  </Text>
-                </ProjectStackTech>
-              )}
-            </ProjectStack>
-
-            <Text type="body1" color="grey2">
-              {repository.description?.substring(0, 129)}
-            </Text>
-            <ProjectLinks>
-              <ProjectLink target="_blank" href={repository.html_url}>
-                <FaGithub /> Github Code
-              </ProjectLink>
-              {repository.homepage && (
+              <ProjectLinks>
                 <ProjectLink
                   target="_blank"
-                  href={`https://${repository.homepage}`}
+                  href={`https://github.com/kenzinho-vagas/kenzinho-vagas`}
                 >
-                  <FaShare /> See demo
+                  <FaGithub /> Kenzinho code
                 </ProjectLink>
-              )}
-            </ProjectLinks>
-          </ProjectWrapper>
-        ))}
+                {
+                  <ProjectLink
+                    target="_blank"
+                    href={`https://kenzinho-vagas-zeta.vercel.app/login`}
+                  >
+                    <FaShare /> See demo
+                  </ProjectLink>
+                }
+              </ProjectLinks>
+              <ProjectTitle
+                as="h2"
+                type="heading3"
+                css={{ marginBottom: "$3" }}
+                color="grey4"
+              >
+                Nu Kenzie
+              </ProjectTitle>
+
+              <Text type="body1" color="grey2">
+                Projeto que simula uma aplicação de controle de finanças, onde
+                você adiciona entradas e saídas do mês, filtro de despesas e
+                visualização de saldo mensal. Tecnologias: React, yup, React
+                Hook Form, Vercel, Figma, Styled Components, Toastfiy
+              </Text>
+              <ProjectLinks>
+                <ProjectLink
+                  target="_blank"
+                  href={`https://github.com/kenzinho-vagas/kenzinho-vagas`}
+                >
+                  <FaGithub /> Nu Kenzie code
+                </ProjectLink>
+                {
+                  <ProjectLink
+                    target="_blank"
+                    href={`https://react-entrega-s1-nu-kenzie-nataliauai-32.vercel.app/`}
+                  >
+                    <FaShare /> See demo
+                  </ProjectLink>
+                }
+              </ProjectLinks>
+            </ProjectsAreaSocialMediaMessage>
+          </ProjectAreaWrapperColumns>
+        </Container>
+      
     </>
   );
 };

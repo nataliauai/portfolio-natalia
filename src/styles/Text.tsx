@@ -43,6 +43,12 @@ export const Text = styled("p", {
                 fontWeight: 700,
                 ...headingsDefaultConfig
             },
+            heading5: {
+                fontSize: "$title4",
+                lineHeight: "$title3",
+                fontWeight: 700,
+                ...headingsDefaultConfig
+            },
             body1: {
                 fontSize: "$text1",
                 lineHeight: "$text1",

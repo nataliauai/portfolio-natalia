@@ -29,7 +29,7 @@ import {
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
-  const portfolioUrl = `https://github.com/${userData.githubUser}/my-portfolio`;
+  const portfolioUrl = `https://github.com/${userData.githubUser}`;
 
   return (
     <main id="home">
@@ -47,7 +47,7 @@ export const Home = (): JSX.Element => {
               <Text color="grey4">Hello, my name is {userData.nameUser}</Text>
             </Flex>
             <Text as="h1" type="heading1" color="grey5">
-            I{" "}
+              I{" "}
               <Text as="span" type="heading1" color="brand1">
                 love
               </Text>{" "}
@@ -87,11 +87,42 @@ export const Home = (): JSX.Element => {
           </HeaderContent>
         </Container>
       </Header>
+      <ProjectsArea id="about-me">
+        <Container>
+          <ProjectAreaWrapperColumns>
+            <ProjectsAreaSocialMediaMessage>
+              <Text as="h1" type="heading2" color="grey4">
+                Sobre mim
+              </Text>
+              <Text as="p" type="heading5" color="grey2">
+                Amante de tecnologia e finalizando o curso de Desenvolvimento
+                FullStack na Kenzie Academy. Neste curso adquiri experiência em
+                desenvolvimento com diversas linguagens de programação como
+                Javascript, React, HTML, CSS, Node Js, Github, Express,
+                TypeScript, Banco de dados SQL, PostgreSQL, Python, Django, API
+                Rest, componentização, uso de bibliotecas, consumo de APIs, na
+                Kenzie Academy toda semana fazemos projetos individuais e em
+                grupo e praticamos muito. Vivência com Metodologias Ágeis como
+                Scrum que utilizamos no projeto final de grupo, o que nos ajudou
+                muito a finalizar nosso projeto até mesmo antes da data,
+                aprendemos como organizar e finalizar um projeto, e também
+                organização de código e clean code. Possuo Inglês Intermediário,
+                já trabalhei com atendimento ao público em inglês. Foi
+                extremamente desafiador iniciar uma carreira do zero mas todas
+                as dificuldades só me fizeram enxergar do quanto sou capaz de
+                aprender coisas novas diariamente e o quanto é estimulante
+                vencer novos desafios.
+              </Text>
+            </ProjectsAreaSocialMediaMessage>
+            <ProjectsAreaContent></ProjectsAreaContent>
+          </ProjectAreaWrapperColumns>
+        </Container>
+      </ProjectsArea>
       <ProjectsArea id="projects">
         <Container>
           <ProjectAreaWrapperColumns>
             <ProjectsAreaSocialMediaMessage>
-              <Text as="h2" type="heading4" color="grey4">
+              <Text as="h1" type="heading2" color="grey4">
                 My projects
               </Text>
               <Text as="p" type="body1" color="grey2">
